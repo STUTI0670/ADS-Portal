@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Unified Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f4f6fb;
+      color: #253e78;
+      line-height: 1.6;
+    }
+
+    /* ===== NAVBAR ===== */
+    nav {
+      background-color: #253e78;
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 40px;
+      flex-wrap: wrap;
+      gap: 12px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav-left img {
+      height: 45px;
+    }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    .nav-right a {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .nav-right a:hover {
+      color: #e7c268;
+    }
+
+    .nav-right a.active {
+      color: #e7c268;
+      border-bottom: 3px solid #e7c268;
+      padding-bottom: 4px;
+    }
+
+    .login-btn {
+      background-color: #e7c268;
+      color: #111;
+      padding: 8px 20px;
+      border: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgb(231 194 104 / 0.3);
+      transition: background-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .login-btn:hover {
+      background-color: #d4b14e;
+      transform: scale(1.05);
+    }
+
+    /* ===== ABOUT + MAP SECTION ===== */
+    .about-map-section {
+      display: flex;
+      padding: 60px 40px;
+      gap: 50px;
+      flex-wrap: wrap;
+      align-items: center;
+      background: white;
+      max-width: 1200px;
+      margin: 40px auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgb(37 62 120 / 0.1);
+    }
+
+    /* Animated fade-in + slide-in effect */
+    .about, .map {
+      opacity: 0;
+      transform: translateY(40px);
+      animation-fill-mode: forwards;
+      animation-duration: 1s;
+      animation-timing-function: ease-out;
+    }
+    .about {
+      flex: 2;
+      animation-name: slideFadeInLeft;
+      animation-delay: 0.3s;
+    }
+    .map {
+      flex: 1.5;
+      animation-name: slideFadeInRight;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes slideFadeInLeft {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    @keyframes slideFadeInRight {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .about h2 {
+      color: #253e78;
+      margin-bottom: 24px;
+      font-size: 2.6rem;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      line-height: 1.2;
+      text-transform: uppercase;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .about p {
+      font-size: 1.2rem;
+      color: #555d7a;
+      font-weight: 600;
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+      text-align: justify;
+      text-indent: 2em;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgb(37 62 120 / 0.15);
+      transition: transform 0.4s ease;
+    }
+
+    .map iframe:hover {
+      transform: scale(1.02);
+      box-shadow: 0 12px 32px rgb(37 62 120 / 0.25);
+    }
+
+    /* ===== STATES + IMAGE SECTION ===== */
+    .states-images-section {
+      display: flex;
+      padding: 0 40px 60px;
+      gap: 40px;
+      max-width: 1200px;
+      margin: auto;
+      flex-wrap: wrap;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgb(37 62 120 / 0.1);
+    }
+
+    .states {
+      flex: 2;
+    }
+
+    .states h3 {
+      margin-bottom: 18px;
+      color: #253e78;
+      font-weight: 800;
+      font-size: 1.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.1px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .states ul {
+      list-style-type: disc;
+      margin-left: 24px;
+      font-size: 1.1rem;
+      color: #555d7a;
+      font-weight: 600;
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+    }
+
+    .images {
+      flex: 1.5;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .images img {
+      width: 100%;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s ease;
+      cursor: pointer;
+    }
+
+    .images img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+    }
+
+    /* ===== FOOTER SECTION ===== */
+    footer {
+      background-color: #ddeff8;
+      margin-top: 60px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    footer > div:first-child {
+      background-color: #253e78;
+      color: white;
+      padding: 16px 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      font-size: 1.25rem;
+    }
+
+    footer > div:first-child img {
+      height: 28px;
+    }
+
+    footer > div:nth-child(2) {
+      display: flex;
+      justify-content: space-between;
+      padding: 40px 40px;
+      flex-wrap: wrap;
+      color: #000;
+      gap: 24px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    footer > div:nth-child(2) > div {
+      flex: 1 1 300px;
+    }
+
+    footer p, footer a, footer small, footer span {
+      font-weight: 600;
+      color: #253e78;
+    }
+
+    footer a {
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+
+    footer a:hover {
+      color: #e7c268;
+    }
+
+    footer > div:nth-child(2) div:last-child {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer > div:nth-child(2) div:last-child img {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: white;
+      padding: 10px;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    footer > div:nth-child(2) div:last-child img:hover {
+      transform: scale(1.15);
+    }
+    /* Header Styles */
+header {
+  background-color: #2e3a74;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.nav-logo {
+  background: url('img1.jpg') no-repeat center/cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+nav li {
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+nav li:hover {
+  color: #ffdf00;
+}
+
+nav li.active::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: gold;
+  width: 100%;
+  margin-top: 3px;
+  border-radius: 2px;
+}
+
+.login-btn {
+  background: gold;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #00000050;
+  transition: background 0.3s ease;
+}
+
+.login-btn:hover {
+  background: #ffd700;
+}
+
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 900px) {
+      .about-map-section,
+      .states-images-section {
+        flex-direction: column;
+        padding: 40px 20px;
+      }
+      .map iframe {
+        height: 400px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 12px 20px;
+      }
+      .nav-right {
+        gap: 12px;
+      }
+      .nav-right a {
+        font-size: 0.9rem;
+      }
+      .login-btn {
+        padding: 6px 14px;
+        font-size: 0.9rem;
+      }
+      .about h2 {
+        font-size: 2rem;
+      }
+      .about p {
+        font-size: 1rem;
+        text-indent: 1em;
+      }
+      .states h3 {
+        font-size: 1.4rem;
+      }
+      .states ul {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav>
+    <div class="nav-left">
+      <img src="image.png" alt="UPAg Logo" /> <!-- Only the logo uses image.png -->
+    </div>
+    <div class="nav-right">
+      <header>
+  <div class="nav-logo" aria-label="UPAg logo"></div>
+  <nav>
+    <ul>
+      <li class="active">HOME</li>
+      <li><a href="dah.html">DASHBOARD</a></li>
+      <li>REPORTS</li>
+      <li>MISCELLANEOUS</li>
+      <li>
+        <button class="login-btn">LOGIN</button>
+      </li>
+    </ul>
+  </nav>
+</header>
+
+    </div>
+  </nav>
+
+  <!-- ===== ABOUT & MAP ===== -->
+  <section class="about-map-section">
+    <div class="about">
+      <h2>Agricultural Supply Demand</h2>
+      <p>
+        The <strong>Agricultural Supply Demand Portal</strong> is a centralized platform delivering
+        <em>real-time agricultural data</em> with precision and depth. This portal empowers policymakers, researchers, and farmers alike by providing comprehensive insights and analytics that drive informed decisions for sustainable agricultural growth.  
+        <br><br>
+        Our mission is to create transparency and accessibility in agricultural data, helping India’s farming community thrive in a rapidly evolving landscape.
+      </p>
+    </div>
+    <div class="map">
+     <img src="image2.png" alt="imagery">
+    </div>
+  </section>
+
+  <!-- ===== STATES & IMAGES ===== -->
+  <section class="states-images-section">
+    <div class="states">
+      <h3>Top 5 States in Rice Production (Lakh Tonnes)</h3>
+      <ul>
+        <li>Uttar Pradesh - 209.31</li>
+        <li>Telangana - 170.94</li>
+        <li>West Bengal - 164.91</li>
+        <li>Punjab - 143.61</li>
+        <li>Odisha - 96.14</li>
+      </ul>
+    </div>
+    <div class="images">
+     
+    
+      <img src="imageh.png" alt="Crop Image 3" />
+    </div>
+  </section>
+
+  <!-- ===== FOOTER SECTION ===== -->
+  <footer>
+    <div>
+      <h3>Connect to UPAg</h3>
+      <img src="image.png" alt="API Icon" style="height: 24px; margin: 0 8px;">
+      <span>Open API</span>
+    </div>
+
+    <div>
+      <!-- Left Column -->
+      <div>
+        <p><strong>Website Content Managed by</strong></p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit qui cumque est enim explicabo! Enim consequuntur provident sed? Perferendis distinctio voluptatem doloremque tempore..</p>
+        <p><small>Last Reviewed & Updated On 07 Jun 2025</small></p>
+      </div>
+
+      <!-- Center Column -->
+      <div style="text-align: center;">
+        <a href="#">Privacy Statement</a>
+        <span>|</span>
+        <a href="#">Disclaimer</a>
+        <p style="margin-top: 10px;">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Suscipit voluptatum esse natus nihil velit architecto.<br>
+          All Rights Reserved.
+        </p>
+      </div>
+
+      <!-- Right Column (Social Icons) -->
+     
+    <div class="footer-right">
+      <img src="Screenshot 2025-06-11 200335.png" />
+      <img src="Screenshot 2025-06-11 200404.png" />
+      <img src="Screenshot 2025-06-11 200418.png" />
+    </div>
+  
+    </div>
+  </footer>
+
+</body>
+</html>

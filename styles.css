@@ -1,0 +1,204 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f9fcff;
+}
+
+/* Header */
+header {
+  background-color: #2e3a74;
+  color: white;
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  justify-content: space-between;
+}
+
+.nav-logo {
+  background: url('img1.jpg') no-repeat center/cover;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  align-items: center;
+}
+
+nav li {
+  cursor: pointer;
+  color: white;
+  font-size: 1.2rem;
+  position: relative;
+}
+
+nav li.active::after {
+  content: '';
+  display: block;
+  height: 3px;
+  background: gold;
+  width: 100%;
+  margin-top: 3px;
+}
+
+.login-btn {
+  background: gold;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px #00000050;
+}
+
+/* Main Layout */
+main {
+  display: flex;
+  padding: 30px;
+  gap: 20px;
+}
+
+.sidebar {
+  width: 300px;
+}
+
+.sidebar h2 {
+  font-size: 1.8rem;
+  color: #2e3a74;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.sidebar h2::after {
+  content: '';
+  display: block;
+  width: 100px;
+  height: 5px;
+  background: gold;
+  margin-top: 5px;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  background: white;
+  padding: 15px;
+  border: 1px solid #e0e7ff;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.sidebar li:hover, .sidebar li.selected {
+  background: #e4f2fd;
+  font-weight: bold;
+}
+
+/* Dashboard Content */
+.dashboard-content {
+  flex: 1;
+  background: white;
+  padding: 20px;
+  border: 1px solid #e0e7ff;
+  transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+}
+
+.dashboard-content.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.dashboard-content.fade-out {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.dashboard-content ol {
+  list-style: decimal;
+  font-size: 1.3rem;
+  color: #1f2d5e;
+}
+
+.dashboard-content li {
+  margin-bottom: 15px;
+}
+
+/* Footer */
+footer {
+  background: #e6f3fb;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  color: #1f2d5e;
+}
+
+footer div {
+  flex: 1;
+  padding: 0 20px;
+}
+
+footer img {
+  width: 50px;
+  height: 50px;
+  margin-right: 10px;
+  border-radius: 50%;
+}
+/* Navigation Layout */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+
+/* Nav Item Base Style */
+.nav-item {
+  position: relative;
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover Underline Animation */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: gold;
+  transition: width 0.3s ease-in-out;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+/* DASHBOARD stays underlined */
+.nav-item.active::after {
+  width: 100%;
+}
+
+/* LOGIN Styling */
+.login-btn {
+  padding: 8px 16px;
+  border-radius: 8px;
+  background-color: gold;
+  color: black;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.login-btn:hover {
+  transform: scale(1.05);
+}

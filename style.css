@@ -1,0 +1,224 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f3f8ff;
+  color: #333;
+}
+
+header {
+  background: #d4e8ff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+select {
+  padding: 5px;
+  font-size: 1rem;
+}
+
+main {
+  padding: 20px;
+}
+
+.map-section {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.map {
+  width: 60%;
+  max-width: 500px;
+  border: 2px solid #ccc;
+  background: #fff;
+}
+
+.top-locations {
+  background: #e8f4ff;
+  padding: 15px;
+  border-radius: 8px;
+  flex: 1;
+}
+
+.top-locations ul {
+  padding-left: 20px;
+}
+
+.about {
+  margin-top: 30px;
+  background: #fffbe5;
+  padding: 20px;
+  border-left: 4px solid #f0c000;
+}
+
+.stats {
+  margin-top: 30px;
+}
+
+.stats .grid {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.stats .card {
+  flex: 1;
+  background: #e0f7fa;
+  padding: 15px;
+  border-radius: 10px;
+  min-width: 150px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.commercial-crops {
+  margin-top: 30px;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 15px;
+  padding: 10px 0;
+}
+
+.crop-card {
+  min-width: 120px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  text-align: center;
+  padding: 10px;
+}
+
+.crop-card img {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+footer {
+  background: #123875;
+  color: #fff;
+  font-size: 0.9rem;
+  padding: 30px 20px 10px;
+}
+
+.footer-top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 20px;
+}
+
+.footer-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  flex: 1;
+  min-width: 250px;
+}
+
+.footer-left .gov-logo {
+  width: 50px;
+  height: auto;
+}
+
+.footer-mid {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-mid h4 {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.footer-mid ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-mid li {
+  margin-bottom: 6px;
+}
+
+.footer-mid a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.footer-mid a:hover {
+  text-decoration: underline;
+}
+
+.useful-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.useful-links img {
+  width: 90px;
+  background: #fff;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.footer-api {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 1rem;
+  background: #0e2c5a;
+  padding: 10px 0;
+}
+
+.footer-api a {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #555;
+  margin-top: 15px;
+  background: #e8f4ff;
+  color: #000;
+}
+
+.footer-bottom .bottom-links {
+  margin: 10px 0;
+}
+
+.footer-bottom a {
+  color: #000;
+  text-decoration: none;
+}
+
+.footer-bottom a:hover {
+  text-decoration: underline;
+}
+
+.social-icons {
+  margin-top: 10px;
+}
+
+.social-icons img {
+  width: 24px;
+  margin: 0 5px;
+}
+
+.tech-partner img {
+  height: 24px;
+  vertical-align: middle;
+}

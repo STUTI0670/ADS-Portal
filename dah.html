@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>UPAg Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <div class="nav-logo"></div>
+    <nav>
+      <ul>
+     
+  <li class="nav-item">HOME</li>
+  <li class="nav-item active">DASHBOARD</li>
+  <li class="nav-item">REPORTS</li>
+  <li class="nav-item">MISCELLANEOUS</li>
+  <li><button class="nav-item login-btn">LOGIN</button></li>
+
+
+      </ul>
+    </nav>
+  </header>
+<main style="background: #f7f9fc; min-height: 100vh; padding: 2rem;">
+  <div style="max-width: 1200px; margin: auto;">
+    <h2 style="font-size: 2.4rem; font-weight: 800; color: #343866; text-align:center;">
+      All Dashboards
+    </h2>
+    <div style="height: 4px; width: 120px; background: #ffe066; margin: 0.5em auto 2em auto;"></div>
+
+    <table class="dashboard-table">
+      <thead>
+        <tr>
+          <th>Dashboard Title</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><a href="http://dashboard-abyydv6enfzmvgappbpgakd.streamlit.app/" class="dash-link">🗺️ India, States & Districts</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://dashboard-tyfxhdmdkoz99mwe75chrc.streamlit.app/" class="dash-link">📊 Historical Data & Future Projections</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://dashboard-nhe78g5q8tztkqrrj2euab.streamlit.app/" class="dash-link">📈 Decade-wise Trend Growth Rate</a></td>
+        </tr>
+        <tr>
+          <td><a href="https://dashboard-pdfbgvn29ajw3chvbwwnd4.streamlit.app/" class="dash-link">🌍 World Map Visualization</a></td>
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+</main>
+
+<style>
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Segoe UI', sans-serif;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.05);
+}
+
+.dashboard-table thead {
+  background: #343866;
+  color: white;
+}
+
+.dashboard-table th {
+  text-align: left;
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem;
+}
+
+.dashboard-table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid #e3e6f0;
+  transition: all 0.3s ease-in-out;
+  background: #ffffff;
+}
+
+.dash-link {
+  display: block;
+  font-weight: 600;
+  font-size: 1.1rem;
+  text-decoration: none;
+  color: #343866;
+  transition: all 0.3s ease;
+}
+
+.dashboard-table tr:hover {
+  background: #eef4ff;
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(52, 56, 102, 0.15);
+}
+
+.dashboard-table tr:hover td {
+  font-weight: 700;
+  transform: translateY(-2px);
+}
+
+.dashboard-table tr {
+  transition: transform 0.25s ease, background 0.25s ease;
+}
+
+@media (max-width: 768px) {
+  .dashboard-table th,
+  .dashboard-table td {
+    padding: 0.9rem;
+    font-size: 1rem;
+  }
+}
+
+</style>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-left">
+      <h3>Website Content Managed by</h3>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      <p>Last Reviewed & Updated On 07 Jun 2025</p>
+    </div>
+    <div class="footer-center">
+      <p>Privacy Statement | Disclaimer</p>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit...</p>
+      <p>All Rights Reserved.</p>
+    </div>
+    <div class="footer-right">
+      <img src="Screenshot 2025-06-11 200335.png" />
+      <img src="Screenshot 2025-06-11 200404.png" />
+      <img src="Screenshot 2025-06-11 200418.png" />
+    </div>
+  </footer>
+
+  <script src="scrip.js"></script>
+</body>
+</html>
