@@ -18,7 +18,6 @@
       line-height: 1.6;
     }
 
-    /* ===== NAVBAR ===== */
     nav {
       background-color: #253e78;
       color: white;
@@ -80,7 +79,6 @@
       transform: scale(1.05);
     }
 
-    /* ===== ABOUT + MAP SECTION ===== */
     .about-map-section {
       display: flex;
       padding: 60px 40px;
@@ -94,7 +92,6 @@
       box-shadow: 0 4px 20px rgb(37 62 120 / 0.1);
     }
 
-    /* Animated fade-in + slide-in effect */
     .about, .map {
       opacity: 0;
       transform: translateY(40px);
@@ -102,11 +99,13 @@
       animation-duration: 1s;
       animation-timing-function: ease-out;
     }
+
     .about {
       flex: 2;
       animation-name: slideFadeInLeft;
       animation-delay: 0.3s;
     }
+
     .map {
       flex: 1.5;
       animation-name: slideFadeInRight;
@@ -119,6 +118,7 @@
         transform: translateY(0);
       }
     }
+
     @keyframes slideFadeInRight {
       to {
         opacity: 1;
@@ -161,7 +161,6 @@
       box-shadow: 0 12px 32px rgb(37 62 120 / 0.25);
     }
 
-    /* ===== STATES + IMAGE SECTION ===== */
     .states-images-section {
       display: flex;
       padding: 0 40px 60px;
@@ -219,27 +218,10 @@
       box-shadow: 0 8px 24px rgba(0,0,0,0.15);
     }
 
-    /* ===== FOOTER SECTION ===== */
     footer {
       background-color: #ddeff8;
       margin-top: 60px;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
-
-    footer > div:first-child {
-      background-color: #253e78;
-      color: white;
-      padding: 16px 40px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 12px;
-      font-weight: 700;
-      font-size: 1.25rem;
-    }
-
-    footer > div:first-child img {
-      height: 28px;
     }
 
     footer > div:nth-child(2) {
@@ -290,75 +272,73 @@
     footer > div:nth-child(2) div:last-child img:hover {
       transform: scale(1.15);
     }
-    /* Header Styles */
-header {
-  background-color: #2e3a74;
-  color: white;
-  display: flex;
-  align-items: center;
-  padding: 10px 20px;
-  justify-content: space-between;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
 
-.nav-logo {
-  background: url('img1.jpg') no-repeat center/cover;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-}
+    header {
+      background-color: #2e3a74;
+      color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      justify-content: space-between;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
 
-nav ul {
-  list-style: none;
-  display: flex;
-  gap: 25px;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
+    .nav-logo {
+      background: url('img1.jpg') no-repeat center/cover;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
 
-nav li {
-  cursor: pointer;
-  color: white;
-  font-size: 1.2rem;
-  position: relative;
-  transition: color 0.3s;
-}
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      align-items: center;
+      margin: 0;
+      padding: 0;
+    }
 
-nav li:hover {
-  color: #ffdf00;
-}
+    nav li {
+      cursor: pointer;
+      color: white;
+      font-size: 1.2rem;
+      position: relative;
+      transition: color 0.3s;
+    }
 
-nav li.active::after {
-  content: '';
-  display: block;
-  height: 3px;
-  background: gold;
-  width: 100%;
-  margin-top: 3px;
-  border-radius: 2px;
-}
+    nav li:hover {
+      color: #ffdf00;
+    }
 
-.login-btn {
-  background: gold;
-  border: none;
-  padding: 10px 20px;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 10px;
-  box-shadow: 0 2px 6px #00000050;
-  transition: background 0.3s ease;
-}
+    nav li.active::after {
+      content: '';
+      display: block;
+      height: 3px;
+      background: gold;
+      width: 100%;
+      margin-top: 3px;
+      border-radius: 2px;
+    }
 
-.login-btn:hover {
-  background: #ffd700;
-}
+    .login-btn {
+      background: gold;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+      border-radius: 10px;
+      box-shadow: 0 2px 6px #00000050;
+      transition: background 0.3s ease;
+    }
 
+    .login-btn:hover {
+      background: #ffd700;
+    }
 
-    /* ===== RESPONSIVE ===== */
     @media (max-width: 900px) {
       .about-map-section,
       .states-images-section {
@@ -402,31 +382,28 @@ nav li.active::after {
 </head>
 <body>
 
-  <!-- ===== NAVBAR ===== -->
   <nav>
     <div class="nav-left">
-      <img src="image.png" alt="UPAg Logo" /> <!-- Only the logo uses image.png -->
+      <img src="image.png" alt="UPAg Logo" />
     </div>
     <div class="nav-right">
       <header>
-  <div class="nav-logo" aria-label="UPAg logo"></div>
-  <nav>
-    <ul>
-      <li class="active">HOME</li>
-      <li><a href="dah.html">DASHBOARD</a></li>
-      <li>REPORTS</li>
-      <li>MISCELLANEOUS</li>
-      <li>
-        <button class="login-btn">LOGIN</button>
-      </li>
-    </ul>
-  </nav>
-</header>
-
+        <div class="nav-logo" aria-label="UPAg logo"></div>
+        <nav>
+          <ul>
+            <li class="active">HOME</li>
+            <li><a href="dah.html">DASHBOARD</a></li>
+            <li>REPORTS</li>
+            <li>MISCELLANEOUS</li>
+            <li>
+              <button class="login-btn">LOGIN</button>
+            </li>
+          </ul>
+        </nav>
+      </header>
     </div>
   </nav>
 
-  <!-- ===== ABOUT & MAP ===== -->
   <section class="about-map-section">
     <div class="about">
       <h2>Agricultural Supply Demand</h2>
@@ -438,11 +415,10 @@ nav li.active::after {
       </p>
     </div>
     <div class="map">
-     <img src="image2.png" alt="imagery">
+      <img src="image2.png" alt="imagery">
     </div>
   </section>
 
-  <!-- ===== STATES & IMAGES ===== -->
   <section class="states-images-section">
     <div class="states">
       <h3>Top 5 States in Rice Production (Lakh Tonnes)</h3>
@@ -455,29 +431,22 @@ nav li.active::after {
       </ul>
     </div>
     <div class="images">
-     
-    
       <img src="imageh.png" alt="Crop Image 3" />
     </div>
   </section>
 
-  <!-- ===== FOOTER SECTION ===== -->
   <footer>
     <div>
-      <h3>Connect to UPAg</h3>
-      <img src="image.png" alt="API Icon" style="height: 24px; margin: 0 8px;">
-      <span>Open API</span>
+      <!-- Removed the "Connect to UPAg" section here -->
     </div>
 
     <div>
-      <!-- Left Column -->
       <div>
         <p><strong>Website Content Managed by</strong></p>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit qui cumque est enim explicabo! Enim consequuntur provident sed? Perferendis distinctio voluptatem doloremque tempore..</p>
         <p><small>Last Reviewed & Updated On 07 Jun 2025</small></p>
       </div>
 
-      <!-- Center Column -->
       <div style="text-align: center;">
         <a href="#">Privacy Statement</a>
         <span>|</span>
@@ -488,14 +457,11 @@ nav li.active::after {
         </p>
       </div>
 
-      <!-- Right Column (Social Icons) -->
-     
-    <div class="footer-right">
-      <img src="Screenshot 2025-06-11 200335.png" />
-      <img src="Screenshot 2025-06-11 200404.png" />
-      <img src="Screenshot 2025-06-11 200418.png" />
-    </div>
-  
+      <div class="footer-right">
+        <img src="Screenshot 2025-06-11 200335.png" />
+        <img src="Screenshot 2025-06-11 200404.png" />
+        <img src="Screenshot 2025-06-11 200418.png" />
+      </div>
     </div>
   </footer>
 
